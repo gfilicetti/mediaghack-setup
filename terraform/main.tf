@@ -5,7 +5,11 @@ locals {
     number  = data.google_project.project.number
   }
   _services = [
-    "compute"
+    "compute",
+    "serviceusage",
+    "compute",
+    "cloudresourcemanager",
+    "iam",
   ]
   service_accounts_default = {
     compute      = data.google_compute_default_service_account.default.email
