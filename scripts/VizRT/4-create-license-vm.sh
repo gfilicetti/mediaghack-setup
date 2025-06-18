@@ -1,7 +1,8 @@
 VM_NAME=${1:-"`gcloud config get-value project`-license"}
-ZONE=${2:-"us-central1-a"}
-RANGE=${3:-"10.1.0.0/16"}
-PROJECT=${4:-`gcloud config get-value project`}
+REGION=${2:-"us-central1"}
+ZONE=${3:-"us-central1-a"}
+RANGE=${4:-"10.1.0.0/16"}
+PROJECT=${5:-`gcloud config get-value project`}
 
 gcloud compute addresses create $VM_NAME-ip --region=$REGION
 IP=$(gcloud compute addresses describe $VM_NAME-ip --region=$REGION --format="get(address)")
