@@ -1,4 +1,4 @@
-VM_NAME=${1:-"`gcloud config get-value project`-tricaster"}
+VM_NAME=${1:-"`gcloud config get-value project`-vectar"}
 REGION=${2:-"us-central1"}
 ZONE=${3:-"us-central1-a"}
 RANGE=${4:-"10.1.0.0/16"}
