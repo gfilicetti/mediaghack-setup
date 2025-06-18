@@ -10,7 +10,7 @@ IP=$(gcloud compute addresses describe $VM_NAME-ip --region=$REGION --format="ge
 gcloud compute instances create $VM_NAME \
 	--zone=$ZONE --machine-type=g2-standard-16 \
 	--network-interface=address=$IP,network-tier=PREMIUM,nic-type=GVNIC,stack-type=IPV4_ONLY,subnet=$REGION \
-	--accelerator=count=1,type=nvidia-l4 \
+	--accelerator=count=1,type=nvidia-l4-vws \
 	--tags=http-server,https-server,lb-health-check \
 	--create-disk=auto-delete=yes,boot=yes,device-name=$VM_NAME,image=projects/windows-cloud/global/images/windows-server-2022-dc-v20250613,mode=rw,size=50,type=pd-balanced \
 	--create-disk=auto-delete=yes,device-name=disk-1,mode=rw,name=$VM_NAME-disk-1,size=70,type=pd-balanced \
