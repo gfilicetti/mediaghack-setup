@@ -5,7 +5,6 @@ locals {
     number  = data.google_project.project.number
   }
   _services = [
-    "compute",
     "serviceusage",
     "compute",
     "cloudresourcemanager",
