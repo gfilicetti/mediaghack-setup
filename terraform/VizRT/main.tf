@@ -25,7 +25,7 @@ data "google_project" "project" {
   project_id = var.project_id
 }
 
-data "google_compute_default_service_account" "default" {}
+# data "google_compute_default_service_account" "default" {}
 
 resource "google_project_service_identity" "service_identity" {
   for_each   = local.service_accounts_services_api
